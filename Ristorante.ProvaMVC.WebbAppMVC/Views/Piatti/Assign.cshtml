@@ -1,0 +1,46 @@
+﻿@model PiattoViewModel
+<h1>Assegnare un menu al piatto</h1>
+
+<form method="post">
+    <div hidden>
+        <div class="form-group">
+            <label asp-for="Id"></label>
+            <input asp-for="Id" class="form-control" readonly />
+            <span asp-validation-for="Id" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" readonly />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Descrizione"></label>
+            <input asp-for="Descrizione" class="form-control" readonly />
+            <span asp-validation-for="Descrizione" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Tipologia"></label>
+            <input asp-for="Descrizione" class="form-control" readonly />
+            <span asp-validation-for="Tipologia" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Prezzo"></label>
+            <input asp-for="Prezzo" class="form-control" readonly />
+            <span asp-validation-for="Prezzo" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group">
+            <label asp-for="IdMenu"></label>
+            <select asp-for="IdMenu" asp-items="@ViewBag.Menu" class="form-control" readonly>
+                <option value="">Selezionare un'opzione..</option>
+            </select>
+            <span asp-validation-for="IdMenu" class="text-danger"></span>
+        </div>
+    <input type="submit" value="Inserisci" class="btn btn-primary" />
+    <input type="reset" value="Reset" class="=btn btn-primary" />
+    <a class="btn btn-primary" asp-controller="Piatti" asp-action="Index">Indietro</a>
+</form>
